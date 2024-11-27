@@ -56,16 +56,18 @@ class SavedListsScreen extends StatelessWidget {
     },
   ];
 
+  const SavedListsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Saved Lists'),
+        title: const Text('Saved Lists'),
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -80,17 +82,17 @@ class SavedListsScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final list = savedLists[index];
             return Card(
-              margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0),
               ),
               color: Colors.white.withOpacity(0.1), // Transparent card background
               elevation: 4,
               child: ListTile(
-                contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+                contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
                 title: Text(
                   list['title'],
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 18,
@@ -98,13 +100,13 @@ class SavedListsScreen extends StatelessWidget {
                 ),
                 subtitle: Text(
                   'Items: ${list['items'].map((item) => '${item['name']} (${item['quantity']}, ${item['category']})').join(', ')}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white70,
                     fontSize: 14,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                trailing: Icon(Icons.arrow_forward_ios, color: Colors.white),
+                trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -125,7 +127,7 @@ class SavedListsScreen extends StatelessWidget {
 class ListDetailsScreen extends StatelessWidget {
   final Map<String, dynamic> list;
 
-  const ListDetailsScreen({Key? key, required this.list}) : super(key: key);
+  const ListDetailsScreen({super.key, required this.list});
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +138,7 @@ class ListDetailsScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -150,31 +152,31 @@ class ListDetailsScreen extends StatelessWidget {
           itemCount: list['items'].length,
           itemBuilder: (context, index) {
             return Card(
-              margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0),
               ),
               color: Colors.white.withOpacity(0.1), // Transparent card background
               elevation: 4,
               child: ListTile(
-                contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+                contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
                 leading: CircleAvatar(
                   backgroundColor: Colors.white.withOpacity(0.3),
                   child: Text(
                     list['items'][index]['name'][0].toUpperCase(),
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
                 title: Text(
                   list['items'][index]['name'],
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
                 subtitle: Text(
                   'Quantity: ${list['items'][index]['quantity']} | Category: ${list['items'][index]['category']}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white70,
                     fontSize: 14,
                   ),

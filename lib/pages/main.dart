@@ -5,6 +5,8 @@ import '../Screens/list.dart';
 import '../Screens/setting.dart';
 
 class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -24,7 +26,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -47,11 +49,11 @@ class _MainPageState extends State<MainPage> {
                     _currentIndex = index;
                   });
                 },
-                children: _screens,
                 physics:
-                    BouncingScrollPhysics(), // Optional, for smooth scroll effect
+                    const BouncingScrollPhysics(),
+                children: _screens, // Optional, for smooth scroll effect
               ),
-              Positioned(
+              const Positioned(
                 top: 16,
                 right: 16,
                 child: Row(
@@ -65,33 +67,33 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
       bottomNavigationBar: AnimatedContainer(
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         decoration: BoxDecoration(
-          color: Color(0xFF2C2C2C),
+          color: const Color(0xFF2C2C2C),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),
               blurRadius: 15,
-              offset: Offset(0, -3),
+              offset: const Offset(0, -3),
               spreadRadius: 1,
             ),
           ],
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(25),
             topRight: Radius.circular(25),
           ),
           child: BottomNavigationBar(
             elevation: 0,
-            backgroundColor: Color(0xFF2C2C2C),
+            backgroundColor: const Color(0xFF2C2C2C),
             selectedItemColor: Colors.blue[200],
             unselectedItemColor: Colors.grey[600],
-            selectedLabelStyle: TextStyle(
+            selectedLabelStyle: const TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 13,
             ),
-            unselectedLabelStyle: TextStyle(
+            unselectedLabelStyle: const TextStyle(
               fontSize: 12,
             ),
             type: BottomNavigationBarType.fixed,
@@ -101,10 +103,10 @@ class _MainPageState extends State<MainPage> {
                 _currentIndex = index;
               });
               _pageController.animateToPage(index,
-                  duration: Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 300),
                   curve: Curves.decelerate);
             },
-            items: [
+            items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.dashboard_rounded, size: 26),
                 activeIcon: Icon(Icons.dashboard, size: 26),

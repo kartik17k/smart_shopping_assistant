@@ -27,7 +27,7 @@ Welcome to the **Smart Shopping Assistant**, a state-of-the-art Flutter applicat
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/smart_shopping_assistant.git
+   git clone https://github.com/kartik17k/smart_shopping_assistant
    cd smart_shopping_assistant
    ```
 2. Install dependencies:

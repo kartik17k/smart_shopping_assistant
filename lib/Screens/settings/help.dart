@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 class HelpSupportScreen extends StatelessWidget {
   final TextEditingController _feedbackController = TextEditingController();
 
+  HelpSupportScreen({super.key});
+
   void _showFeedbackDialog(BuildContext context) {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: Color(0xFF1E1E1E),
+          backgroundColor: const Color(0xFF1E1E1E),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          title: Text(
+          title: const Text(
             'Send Feedback',
             style: TextStyle(
                 color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
@@ -27,24 +29,24 @@ class HelpSupportScreen extends StatelessWidget {
                   color: Colors.grey[300],
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextField(
                 controller: _feedbackController,
                 maxLines: 4,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Color(0xFF113F64)),
+                    borderSide: const BorderSide(color: Color(0xFF113F64)),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Color(0xFF113F64), width: 2),
+                    borderSide: const BorderSide(color: Color(0xFF113F64), width: 2),
                   ),
                   filled: true,
-                  fillColor: Color(0xFF2C2C2C),
+                  fillColor: const Color(0xFF2C2C2C),
                   hintText: 'Write your feedback here...',
-                  hintStyle: TextStyle(color: Colors.grey),
+                  hintStyle: const TextStyle(color: Colors.grey),
                 ),
               ),
             ],
@@ -54,15 +56,15 @@ class HelpSupportScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text(
+              child: const Text(
                 'Cancel',
                 style: TextStyle(color: Colors.grey),
               ),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF113F64),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                backgroundColor: const Color(0xFF113F64),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -72,14 +74,14 @@ class HelpSupportScreen extends StatelessWidget {
                   _submitFeedback(context);
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
+                    const SnackBar(
                       content: Text('Please enter feedback before submitting.'),
                       backgroundColor: Colors.red,
                     ),
                   );
                 }
               },
-              child: Text(
+              child: const Text(
                 'Submit',
                 style: TextStyle(
                   color: Colors.white,
@@ -96,16 +98,16 @@ class HelpSupportScreen extends StatelessWidget {
   void _submitFeedback(BuildContext context) {
     Navigator.pop(context);
 
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 1), () {
       showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
-            backgroundColor: Color(0xFF1E1E1E),
+            backgroundColor: const Color(0xFF1E1E1E),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
-            title: Text(
+            title: const Text(
               'Thank You!',
               style: TextStyle(
                   color: Colors.white,
@@ -122,7 +124,7 @@ class HelpSupportScreen extends StatelessWidget {
             actions: [
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF113F64),
+                  backgroundColor: const Color(0xFF113F64),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -130,7 +132,7 @@ class HelpSupportScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text(
+                child: const Text(
                   'OK',
                   style: TextStyle(
                     color: Colors.white,
@@ -152,10 +154,10 @@ class HelpSupportScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text('Help & Support'),
+        title: const Text('Help & Support'),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -166,17 +168,17 @@ class HelpSupportScreen extends StatelessWidget {
           ),
         ),
         child: ListView(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           children: [
             Container(
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.05),
                 borderRadius: BorderRadius.circular(10),
               ),
-              margin: EdgeInsets.symmetric(vertical: 4),
+              margin: const EdgeInsets.symmetric(vertical: 4),
               child: ListTile(
-                leading: Icon(Icons.help_outline, color: Colors.white),
-                title: Text('FAQs', style: TextStyle(color: Colors.white)),
+                leading: const Icon(Icons.help_outline, color: Colors.white),
+                title: const Text('FAQs', style: TextStyle(color: Colors.white)),
                 onTap: () {
                   // Navigate to FAQ section
                 },
@@ -187,10 +189,10 @@ class HelpSupportScreen extends StatelessWidget {
                 color: Colors.white.withOpacity(0.05),
                 borderRadius: BorderRadius.circular(10),
               ),
-              margin: EdgeInsets.symmetric(vertical: 4),
+              margin: const EdgeInsets.symmetric(vertical: 4),
               child: ListTile(
-                leading: Icon(Icons.feedback, color: Colors.white),
-                title: Text('Send Feedback',
+                leading: const Icon(Icons.feedback, color: Colors.white),
+                title: const Text('Send Feedback',
                     style: TextStyle(color: Colors.white)),
                 onTap: () {
                   _showFeedbackDialog(context);
@@ -202,8 +204,8 @@ class HelpSupportScreen extends StatelessWidget {
                 color: Colors.white.withOpacity(0.05),
                 borderRadius: BorderRadius.circular(10),
               ),
-              margin: EdgeInsets.symmetric(vertical: 4),
-              child: ListTile(
+              margin: const EdgeInsets.symmetric(vertical: 4),
+              child: const ListTile(
                 leading: Icon(Icons.contact_support, color: Colors.white),
                 title:
                     Text('Contact Us', style: TextStyle(color: Colors.white)),

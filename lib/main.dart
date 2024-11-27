@@ -6,13 +6,15 @@ void main() {
 }
 
 class SmartGroceryApp extends StatelessWidget {
+  const SmartGroceryApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Smart Grocery Assistant',
       theme: ThemeData.dark().copyWith(
-        primaryColor: Color(0xFF113F64),
-        scaffoldBackgroundColor: Color(0xFF1E1E1E),
+        primaryColor: const Color(0xFF113F64),
+        scaffoldBackgroundColor: const Color(0xFF1E1E1E),
       ),
       home: LoginPage(), // Start with LoginPage
     );

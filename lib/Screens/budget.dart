@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BudgetScreen extends StatefulWidget {
+  const BudgetScreen({super.key});
+
   @override
   _BudgetScreenState createState() => _BudgetScreenState();
 }
@@ -42,7 +44,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
+        title: const Text(
           'Budget Planning',
           style: TextStyle(
             color: Colors.white,
@@ -51,7 +53,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -80,17 +82,17 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 'Budget',
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.white,
                                 ),
                               ),
-                              SizedBox(height: 8),
+                              const SizedBox(height: 8),
                               Text(
                                 '\$${_budget.toStringAsFixed(2)}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 24,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
@@ -101,14 +103,14 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text(
+                              const Text(
                                 'Spent',
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.white,
                                 ),
                               ),
-                              SizedBox(height: 8),
+                              const SizedBox(height: 8),
                               Text(
                                 '\$${_total.toStringAsFixed(2)}',
                                 style: TextStyle(
@@ -123,7 +125,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       LinearProgressIndicator(
                         value: _total / _budget,
                         backgroundColor: Colors.grey[200],
@@ -135,7 +137,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -144,7 +146,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.pink,
                     ),
-                    child: Text(
+                    child: const Text(
                       'Reset Total',
                       style: TextStyle(color: Colors.white),
                     ),
@@ -154,20 +156,20 @@ class _BudgetScreenState extends State<BudgetScreen> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
                     ),
-                    child: Text(
+                    child: const Text(
                       'Increase Budget',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Expanded(
                 child: ListView.builder(
                   itemCount: _items.length,
                   itemBuilder: (context, index) {
                     return Container(
-                      margin: EdgeInsets.only(bottom: 12),
+                      margin: const EdgeInsets.only(bottom: 12),
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.1),
                         borderRadius: BorderRadius.circular(12),
@@ -183,7 +185,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         ),
                         title: Text(
                           _items[index]['name'],
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.w500,
                             color: Colors.white,
                           ),
@@ -206,7 +208,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             onPressed: _total + _items[index]['price'] > _budget
                                 ? null
                                 : () => _addToTotal(_items[index]['price']),
-                            child: Text(
+                            child: const Text(
                               'Add',
                               style: TextStyle(color: Colors.white),
                             ),

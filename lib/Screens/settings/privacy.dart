@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PrivacySettingsScreen extends StatefulWidget {
+  const PrivacySettingsScreen({super.key});
+
   @override
   _PrivacySettingsScreenState createState() => _PrivacySettingsScreenState();
 }
@@ -13,18 +15,18 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: Color(0xFF1E1E1E),
+          backgroundColor: const Color(0xFF1E1E1E),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          title: Text(
+          title: const Text(
             'Delete Account',
             style: TextStyle(
               color: Colors.red,
               fontWeight: FontWeight.bold,
             ),
           ),
-          content: Text(
+          content: const Text(
             'Are you sure you want to delete your account? This action cannot be undone.',
             style: TextStyle(color: Colors.white),
           ),
@@ -33,7 +35,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
               onPressed: () {
                 Navigator.pop(context); // Close dialog
               },
-              child: Text(
+              child: const Text(
                 'Cancel',
                 style: TextStyle(color: Colors.white),
               ),
@@ -43,15 +45,15 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
                 Navigator.pop(context); // Close dialog
                 _showAccountDeletedMessage(context);
               },
-              child: Text(
-                'Delete',
-                style: TextStyle(color: Colors.white),
-              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
+              ),
+              child: Text(
+                'Delete',
+                style: TextStyle(color: Colors.white),
               ),
             ),
           ],
@@ -65,15 +67,15 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: Color(0xFF1E1E1E),
+          backgroundColor: const Color(0xFF1E1E1E),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          title: Text(
+          title: const Text(
             'Account Deleted',
             style: TextStyle(color: Colors.white),
           ),
-          content: Text(
+          content: const Text(
             'Your account has been successfully deleted.',
             style: TextStyle(color: Colors.white),
           ),
@@ -98,36 +100,36 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: Color(0xFF1E1E1E),
+          backgroundColor: const Color(0xFF1E1E1E),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          title: Text('Clear Cache', style: TextStyle(color: Colors.white)),
-          content: Text('Are you sure you want to clear the cache?',
+          title: const Text('Clear Cache', style: TextStyle(color: Colors.white)),
+          content: const Text('Are you sure you want to clear the cache?',
               style: TextStyle(color: Colors.white)),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.pop(context); // Close dialog
               },
-              child: Text('Cancel', style: TextStyle(color: Colors.white)),
+              child: const Text('Cancel', style: TextStyle(color: Colors.white)),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context); // Close dialog
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
+                  const SnackBar(
                     content: Text('Cache cleared successfully!'),
                   ),
                 );
               },
-              child: Text('Clear'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
+              child: Text('Clear'),
             ),
           ],
         );
@@ -140,10 +142,10 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text('Privacy and Security'),
+        title: const Text('Privacy and Security'),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -154,17 +156,17 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
           ),
         ),
         child: ListView(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           children: [
             Container(
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.05),
                 borderRadius: BorderRadius.circular(10),
               ),
-              margin: EdgeInsets.symmetric(vertical: 4),
+              margin: const EdgeInsets.symmetric(vertical: 4),
               child: ListTile(
-                leading: Icon(Icons.fingerprint, color: Colors.white),
-                title: Text('Enable Biometric Authentication',
+                leading: const Icon(Icons.fingerprint, color: Colors.white),
+                title: const Text('Enable Biometric Authentication',
                     style: TextStyle(color: Colors.white)),
                 trailing: Switch(
                   value: _isBiometricEnabled,
@@ -180,7 +182,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
                       ),
                     );
                   },
-                  activeColor: Color(0xE5E5E5),
+                  activeColor: const Color(0x00e5e5e5),
                 ),
               ),
             ),
@@ -189,10 +191,10 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
                 color: Colors.white.withOpacity(0.05),
                 borderRadius: BorderRadius.circular(10),
               ),
-              margin: EdgeInsets.symmetric(vertical: 4),
+              margin: const EdgeInsets.symmetric(vertical: 4),
               child: ListTile(
-                leading: Icon(Icons.delete_forever, color: Colors.red),
-                title: Text(
+                leading: const Icon(Icons.delete_forever, color: Colors.red),
+                title: const Text(
                   'Delete Account',
                   style: TextStyle(color: Colors.red),
                 ),
@@ -206,12 +208,12 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
                 color: Colors.white.withOpacity(0.05),
                 borderRadius: BorderRadius.circular(10),
               ),
-              margin: EdgeInsets.symmetric(vertical: 4),
+              margin: const EdgeInsets.symmetric(vertical: 4),
               child: ListTile(
-                leading: Icon(Icons.data_usage, color: Colors.white),
+                leading: const Icon(Icons.data_usage, color: Colors.white),
                 title:
-                    Text('Clear Cache', style: TextStyle(color: Colors.white)),
-                subtitle: Text(
+                    const Text('Clear Cache', style: TextStyle(color: Colors.white)),
+                subtitle: const Text(
                   'Frees up 150MB of space.',
                   style: TextStyle(color: Colors.grey),
                 ),

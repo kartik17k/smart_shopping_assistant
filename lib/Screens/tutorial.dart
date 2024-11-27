@@ -3,9 +3,11 @@ import 'package:intro_slider/intro_slider.dart';
 import 'package:smart_shopping_assistant/Screens/home.dart';
 
 class TutorialScreen extends StatelessWidget {
+  const TutorialScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final TextStyle titleStyle = TextStyle(
+    final TextStyle titleStyle = const TextStyle(
       color: Colors.white,
       fontSize: 28.0,
       fontWeight: FontWeight.bold,
@@ -24,7 +26,7 @@ class TutorialScreen extends StatelessWidget {
       boxShadow: [
         BoxShadow(
           color: Colors.black.withOpacity(0.2),
-          offset: Offset(0, 4),
+          offset: const Offset(0, 4),
           blurRadius: 15.0,
         ),
       ],
@@ -35,7 +37,7 @@ class TutorialScreen extends StatelessWidget {
       end: Alignment.bottomCenter,
       colors: [
         Colors.transparent,
-        Color(0xFF113F64).withOpacity(0.5),
+        const Color(0xFF113F64).withOpacity(0.5),
       ],
     );
 
@@ -46,13 +48,13 @@ class TutorialScreen extends StatelessWidget {
           description:
               "Organize your shopping lists efficiently and save time!",
           pathImage: "assets/images/tutorial1.png",
-          backgroundColor: Color(0xFF113F64),
+          backgroundColor: const Color(0xFF113F64),
           styleTitle: titleStyle,
           styleDescription: descriptionStyle,
-          marginDescription: EdgeInsets.symmetric(horizontal: 24.0),
+          marginDescription: const EdgeInsets.symmetric(horizontal: 24.0),
           centerWidget: Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 40),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -86,13 +88,13 @@ class TutorialScreen extends StatelessWidget {
           description:
               "Plan your shopping trips and track spending in real-time.",
           pathImage: "assets/images/tutorial2.png",
-          backgroundColor: Color(0xFF113F64),
+          backgroundColor: const Color(0xFF113F64),
           styleTitle: titleStyle,
           styleDescription: descriptionStyle,
-          marginDescription: EdgeInsets.symmetric(horizontal: 24.0),
+          marginDescription: const EdgeInsets.symmetric(horizontal: 24.0),
           centerWidget: Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 40),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -126,13 +128,13 @@ class TutorialScreen extends StatelessWidget {
           description:
               "Get personalized suggestions and insights to make smarter purchases.",
           pathImage: "assets/images/tutorial3.png",
-          backgroundColor: Color(0xFF113F64),
+          backgroundColor: const Color(0xFF113F64),
           styleTitle: titleStyle,
           styleDescription: descriptionStyle,
-          marginDescription: EdgeInsets.symmetric(horizontal: 24.0),
+          marginDescription: const EdgeInsets.symmetric(horizontal: 24.0),
           centerWidget: Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 40),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -192,14 +194,14 @@ class TutorialScreen extends StatelessWidget {
       colorActiveDot: Colors.white,
       sizeDot: 8.0,
       renderNextBtn: Container(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.white.withOpacity(0.1),
         ),
-        child: Icon(Icons.navigate_next, color: Colors.white, size: 28),
+        child: const Icon(Icons.navigate_next, color: Colors.white, size: 28),
       ),
-      renderSkipBtn: Text(
+      renderSkipBtn: const Text(
         'SKIP',
         style: TextStyle(
           color: Colors.white,
@@ -207,7 +209,7 @@ class TutorialScreen extends StatelessWidget {
           letterSpacing: 1,
         ),
       ),
-      renderDoneBtn: Text(
+      renderDoneBtn: const Text(
         'GET STARTED',
         style: TextStyle(
           color: Colors.white,

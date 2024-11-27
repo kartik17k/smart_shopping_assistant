@@ -11,6 +11,8 @@ void main() {
 }
 
 class SmartGroceryApp extends StatelessWidget {
+  const SmartGroceryApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,6 +23,8 @@ class SmartGroceryApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -54,17 +58,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     if (_isFirstTime) {
-      return Center(child: CircularProgressIndicator());
+      return const Center(child: CircularProgressIndicator());
     }
 
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
-        title: Text('Smart Grocery Assistant'),
+        title: const Text('Smart Grocery Assistant'),
         backgroundColor: Colors.transparent,
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -80,14 +84,14 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Welcome Back!',
                   style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -117,12 +121,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 _buildSectionTitle('Shopping Insights'),
                 Card(
                   color: Colors.white.withOpacity(0.1),
                   elevation: 4,
-                  child: ListTile(
+                  child: const ListTile(
                     leading: Icon(Icons.bar_chart, color: Colors.purple),
                     title: Text('Last Trip',
                         style: TextStyle(color: Colors.white)),
@@ -133,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Card(
                   color: Colors.white.withOpacity(0.1),
                   elevation: 4,
-                  child: ListTile(
+                  child: const ListTile(
                     leading: Icon(Icons.category, color: Colors.blue),
                     title: Text('Top Categories',
                         style: TextStyle(color: Colors.white)),
@@ -141,12 +145,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(color: Colors.white70)),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 _buildSectionTitle('Tip of the Day'),
                 Card(
                   color: Colors.white.withOpacity(0.1),
                   elevation: 4,
-                  child: ListTile(
+                  child: const ListTile(
                     leading: Icon(Icons.lightbulb, color: Colors.orange),
                     title: Text('Save Money',
                         style: TextStyle(color: Colors.white)),
@@ -155,12 +159,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(color: Colors.white70)),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 _buildSectionTitle('Recent Activity'),
                 Card(
                   color: Colors.white.withOpacity(0.1),
                   elevation: 4,
-                  child: ListTile(
+                  child: const ListTile(
                     leading: Icon(Icons.history, color: Colors.grey),
                     title: Text('Last Shopping Trip',
                         style: TextStyle(color: Colors.white)),
@@ -181,11 +185,11 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         CircleAvatar(
           radius: 30,
-          backgroundColor: Color(0xFF134C85),
+          backgroundColor: const Color(0xFF134C85),
           child: Icon(icon, color: Colors.white, size: 30),
         ),
-        SizedBox(height: 8),
-        Text(label, style: TextStyle(fontSize: 14, color: Colors.white)),
+        const SizedBox(height: 8),
+        Text(label, style: const TextStyle(fontSize: 14, color: Colors.white)),
       ],
     );
   }
@@ -195,7 +199,7 @@ class _HomeScreenState extends State<HomeScreen> {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
             fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
       ),
     );

@@ -3,13 +3,15 @@ import 'package:smart_shopping_assistant/pages/register.dart';
 import 'main.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -25,7 +27,7 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
+              const Text(
                 'Login',
                 style: TextStyle(
                   fontSize: 32,
@@ -34,8 +36,8 @@ class LoginPage extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 32),
-              TextField(
+              const SizedBox(height: 32),
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'Email',
                   labelStyle: TextStyle(color: Colors.white70),
@@ -49,8 +51,8 @@ class LoginPage extends StatelessWidget {
                 ),
                 style: TextStyle(color: Colors.white),
               ),
-              SizedBox(height: 16),
-              TextField(
+              const SizedBox(height: 16),
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'Password',
                   labelStyle: TextStyle(color: Colors.white70),
@@ -65,7 +67,7 @@ class LoginPage extends StatelessWidget {
                 obscureText: true,
                 style: TextStyle(color: Colors.white),
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
                   // Simulate login success and navigate to MainPage
@@ -76,17 +78,17 @@ class LoginPage extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple[600],
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Login',
                   style: TextStyle(color:Colors.white,fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ElevatedButton.icon(
                 onPressed: () async {
                     Navigator.pushReplacement(
@@ -94,11 +96,11 @@ class LoginPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => MainPage()),
                     );
                 },
-                icon: Icon(Icons.login,color: Colors.white,),
-                label: Text('Login with Google',style: TextStyle(color: Colors.white),),
+                icon: const Icon(Icons.login,color: Colors.white,),
+                label: const Text('Login with Google',style: TextStyle(color: Colors.white),),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red[600],
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
@@ -112,11 +114,11 @@ class LoginPage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => MainPage()),
                   );
                 },
-                icon: Icon(Icons.facebook,color: Colors.white,),
-                label: Text('Login with Facebook',style: TextStyle(color: Colors.white),),
+                icon: const Icon(Icons.facebook,color: Colors.white,),
+                label: const Text('Login with Facebook',style: TextStyle(color: Colors.white),),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue[600],
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
@@ -130,11 +132,11 @@ class LoginPage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => MainPage()),
                   );
                 },
-                icon: Icon(Icons.apple,color: Colors.white,),
-                label: Text('Login with Apple',style: TextStyle(color: Colors.white),),
+                icon: const Icon(Icons.apple,color: Colors.white,),
+                label: const Text('Login with Apple',style: TextStyle(color: Colors.white),),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black54,
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
@@ -147,7 +149,7 @@ class LoginPage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => RegisterPage()),
                   );
                 },
-                child: Text(
+                child: const Text(
                   'Don’t have an account? Register here',
                   style: TextStyle(color: Colors.white70),
                 ),

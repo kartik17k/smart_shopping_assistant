@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class AboutScreen extends StatelessWidget {
+  const AboutScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text('About'),
+        title: const Text('About'),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -27,8 +29,8 @@ class AboutScreen extends StatelessWidget {
               color: Colors.white.withOpacity(0.05),
               borderRadius: BorderRadius.circular(10),
             ),
-            padding: EdgeInsets.all(16.0),
-            child: Column(
+            padding: const EdgeInsets.all(16.0),
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(

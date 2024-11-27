@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ListScreen extends StatefulWidget {
+  const ListScreen({super.key});
+
   @override
   _ListScreenState createState() => _ListScreenState();
 }
@@ -73,18 +75,18 @@ class _ListScreenState extends State<ListScreen> {
         onPressed: () {
           // Display a message when the FAB is pressed
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Text('Your shopping list has been saved!'),
               duration: Duration(seconds: 2),
             ),
           );
         },
-        label: Text('Save'),
-        backgroundColor: Color(0xFF113F64), // Customize the color as needed
+        label: const Text('Save'),
+        backgroundColor: const Color(0xFF113F64), // Customize the color as needed
       ),
 
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -101,9 +103,9 @@ class _ListScreenState extends State<ListScreen> {
             ),
             Container(
               padding: const EdgeInsets.all(16.0),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.transparent,
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20),
                 ),
@@ -168,7 +170,7 @@ class _ListScreenState extends State<ListScreen> {
                         value: category,
                         child: Text(
                           category,
-                          style: TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.white),
                         ),
                       );
                     }).toList(),

@@ -3,11 +3,13 @@ import 'package:smart_shopping_assistant/pages/login.dart';
 import 'main.dart';
 
 class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -24,7 +26,7 @@ class RegisterPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
+              const Text(
                 'Register',
                 style: TextStyle(
                   fontSize: 32,
@@ -33,8 +35,8 @@ class RegisterPage extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 32),
-              TextField(
+              const SizedBox(height: 32),
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'Full Name',
                   labelStyle: TextStyle(color: Colors.white70),
@@ -48,8 +50,8 @@ class RegisterPage extends StatelessWidget {
                 ),
                 style: TextStyle(color: Colors.white),
               ),
-              SizedBox(height: 16),
-              TextField(
+              const SizedBox(height: 16),
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'Email',
                   labelStyle: TextStyle(color: Colors.white70),
@@ -63,8 +65,8 @@ class RegisterPage extends StatelessWidget {
                 ),
                 style: TextStyle(color: Colors.white),
               ),
-              SizedBox(height: 16),
-              TextField(
+              const SizedBox(height: 16),
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'Password',
                   labelStyle: TextStyle(color: Colors.white70),
@@ -79,8 +81,8 @@ class RegisterPage extends StatelessWidget {
                 obscureText: true,
                 style: TextStyle(color: Colors.white),
               ),
-              SizedBox(height: 16),
-              TextField(
+              const SizedBox(height: 16),
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'Confirm Password',
                   labelStyle: TextStyle(color: Colors.white70),
@@ -95,7 +97,7 @@ class RegisterPage extends StatelessWidget {
                 obscureText: true,
                 style: TextStyle(color: Colors.white),
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
                   // Add register functionality here
@@ -105,13 +107,13 @@ class RegisterPage extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF113F64),
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  backgroundColor: const Color(0xFF113F64),
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Register',
                   style: TextStyle(color: Colors.white,fontSize: 16, fontWeight: FontWeight.bold),
                 ),
@@ -123,7 +125,7 @@ class RegisterPage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => LoginPage()),
                   );
                 },
-                child: Text(
+                child: const Text(
                   'Already have an account? Login here',
                   style: TextStyle(color: Colors.white70),
                 ),

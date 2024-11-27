@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NotificationPreferencesScreen extends StatefulWidget {
+  const NotificationPreferencesScreen({super.key});
+
   @override
   _NotificationPreferencesScreenState createState() =>
       _NotificationPreferencesScreenState();
@@ -28,9 +30,9 @@ class _NotificationPreferencesScreenState
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          '${type} Notifications ${value ? "Enabled" : "Disabled"}',
+          '$type Notifications ${value ? "Enabled" : "Disabled"}',
         ),
-        duration: Duration(seconds: 2),
+        duration: const Duration(seconds: 2),
       ),
     );
   }
@@ -40,10 +42,10 @@ class _NotificationPreferencesScreenState
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text('Notification Preferences'),
+        title: const Text('Notification Preferences'),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -54,19 +56,19 @@ class _NotificationPreferencesScreenState
           ),
         ),
         child: ListView(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           children: [
             Container(
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(15),
               ),
-              margin: EdgeInsets.only(bottom: 12),
+              margin: const EdgeInsets.only(bottom: 12),
               child: SwitchListTile(
-                activeColor: Color(0xE5E5E5),
-                title: Text('Promotional Notifications',
+                activeColor: const Color(0x00e5e5e5),
+                title: const Text('Promotional Notifications',
                     style: TextStyle(color: Colors.white)),
-                subtitle: Text(
+                subtitle: const Text(
                   'Get notified about sales and discounts.',
                   style: TextStyle(color: Colors.grey),
                 ),
@@ -79,12 +81,12 @@ class _NotificationPreferencesScreenState
                 color: Colors.white.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(15),
               ),
-              margin: EdgeInsets.only(bottom: 12),
+              margin: const EdgeInsets.only(bottom: 12),
               child: SwitchListTile(
-                activeColor: Color(0xE5E5E5),
-                title: Text('Reminder Notifications',
+                activeColor: const Color(0x00e5e5e5),
+                title: const Text('Reminder Notifications',
                     style: TextStyle(color: Colors.white)),
-                subtitle: Text(
+                subtitle: const Text(
                   'Receive shopping reminders.',
                   style: TextStyle(color: Colors.grey),
                 ),
@@ -98,10 +100,10 @@ class _NotificationPreferencesScreenState
                 borderRadius: BorderRadius.circular(15),
               ),
               child: SwitchListTile(
-                activeColor: Color(0xE5E5E5),
+                activeColor: const Color(0x00e5e5e5),
                 title:
-                    Text('App Updates', style: TextStyle(color: Colors.white)),
-                subtitle: Text(
+                    const Text('App Updates', style: TextStyle(color: Colors.white)),
+                subtitle: const Text(
                   'Stay updated with new features and releases.',
                   style: TextStyle(color: Colors.grey),
                 ),
