@@ -1,6 +1,5 @@
 # Smart Shopping Assistant
-
-Welcome to the **Smart Shopping Assistant**, a state-of-the-art Flutter application designed to elevate your shopping experience. This frontend application is your ultimate companion for efficient and enjoyable shopping trips, offering features like organizing shopping lists, receiving personalized recommendations, and navigating store aisles in real-time.
+Welcome to the **Smart Shopping Assistant**, a state-of-the-art Flutter application designed to elevate your shopping experience. This frontend-only application is your ultimate companion for efficient and enjoyable shopping trips, offering features like organizing shopping lists, receiving personalized recommendations, and navigating store aisles in real-time.
 
 ---
 
