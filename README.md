@@ -42,33 +42,6 @@ Welcome to the **Smart Shopping Assistant**, a state-of-the-art Flutter applicat
 ## 🛠️ Technologies Used
 - **Frontend**: Flutter, Dart
 
-## 📂 Folder Structure
-
-smart_shopping_assistant/
-├── lib/
-│   ├── pages/
-│   │   ├── login.dart        # login screen of the app
-│   │   ├── main.dart         # Onboarding/tutorial screens
-│   │   ├── register.dart     # register screen of the app
-│   ├── Screens/
-│   │   ├── Settings/
-│   │   │   ├── about.dart        # About screen of the app
-│   │   │   ├── account.dart      # Account screen of the app
-│   │   │   ├── help.dart         # Help screen of the app
-│   │   │   ├── notification.dart # Notification screen of the app
-│   │   │   ├── privacy.dart      # Privacy screen of the app
-│   │   ├── budget.dart       # Budget screen of the app
-│   │   ├── home.dart         # Home screen of the app
-│   │   ├── list.dart         # List screen of the app
-│   │   ├── saved.dart        # Saved list screen of the app
-│   │   ├── setbudget.dart    # Set budget screen of the app
-│   │   ├── settings.dart     # Settings screen of the app
-│   │   ├── tutorial.dart     # Tutorial screen of the app
-│   ├── main.dart            # Entry point of the app
-├── assets/
-│   ├── images/              # Store app images
-├── pubspec.yaml             # Dependencies and metadata
-
 🔧 Key Functionalities
 1. Budget Tracking
    Monitor your expenses and receive alerts for budget limits.
