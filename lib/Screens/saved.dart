@@ -56,7 +56,7 @@ class SavedListsScreen extends StatelessWidget {
     },
   ];
 
-  const SavedListsScreen({super.key});
+  SavedListsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
