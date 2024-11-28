@@ -71,7 +71,7 @@ Contributions are welcome! Please follow these steps:
    ```
 5. Open a pull request.
 
-## App demo video
+## 🎥 App demo video
 
 https://github.com/user-attachments/assets/f42b91da-1c8d-4572-a4c6-c0aadd16b735
 
