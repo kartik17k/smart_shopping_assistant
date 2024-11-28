@@ -73,7 +73,7 @@ Contributions are welcome! Please follow these steps:
 
 ## 🎥 App demo video
 
-https://github.com/user-attachments/assets/f42b91da-1c8d-4572-a4c6-c0aadd16b735
+https://github.com/user-attachments/assets/9255b03a-a1ad-4a29-82bc-852752c5995f
 
 📧 Contact
 For questions or suggestions, feel free to reach out at:
