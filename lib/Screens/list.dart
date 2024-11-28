@@ -8,7 +8,7 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
-
+  // List of items with their names and categories
   final List<Map<String, dynamic>> _items = [
     {'name': 'Milk', 'category': 'Dairy'},
     {'name': 'Apples', 'category': 'Fruits'},
@@ -17,9 +17,11 @@ class _ListScreenState extends State<ListScreen> {
     {'name': 'Tomato', 'category': 'Vegetable'},
   ];
 
-
+  // Controllers for text fields
   final TextEditingController _name = TextEditingController();
   final TextEditingController _controller = TextEditingController();
+
+  // List of categories
   final List<String> _categories = [
     'Dairy',
     'Fruits',
@@ -28,8 +30,9 @@ class _ListScreenState extends State<ListScreen> {
     'Vegetable',
     'Uncategorized'
   ];
-  String _selectedCategory = 'Uncategorized';
+  String _selectedCategory = 'Uncategorized'; // Default selected category
 
+  // Function to add an item to the list
   void _addItem(String name) {
     setState(() {
       _items.add({
@@ -39,12 +42,14 @@ class _ListScreenState extends State<ListScreen> {
     });
   }
 
+  // Function to delete an item from the list
   void _deleteItem(int index) {
     setState(() {
       _items.removeAt(index);
     });
   }
 
+  // Function to get the color based on the category
   Color _getCategoryColor(String category) {
     switch (category) {
       case 'Dairy':
@@ -85,9 +90,9 @@ class _ListScreenState extends State<ListScreen> {
           );
         },
         label: const Text('Save'),
-        backgroundColor: const Color(0xFF113F64), // Customize the color as needed
+        backgroundColor:
+            const Color(0xFF113F64), // Customize the color as needed
       ),
-
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -115,6 +120,7 @@ class _ListScreenState extends State<ListScreen> {
               ),
               child: Column(
                 children: [
+                  // TextField for the name of the list
                   TextField(
                     controller: _name,
                     style: const TextStyle(color: Colors.white),
@@ -131,7 +137,10 @@ class _ListScreenState extends State<ListScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  // TextField for adding an item
                   TextField(
                     controller: _controller,
                     style: const TextStyle(color: Colors.white),
@@ -158,6 +167,7 @@ class _ListScreenState extends State<ListScreen> {
                     ),
                   ),
                   const SizedBox(height: 10),
+                  // DropdownButtonFormField for selecting a category
                   DropdownButtonFormField<String>(
                     value: _selectedCategory,
                     decoration: InputDecoration(
@@ -169,7 +179,6 @@ class _ListScreenState extends State<ListScreen> {
                     ),
                     items: _categories.map((String category) {
                       return DropdownMenuItem(
-
                         value: category,
                         child: Text(
                           category,
@@ -186,6 +195,7 @@ class _ListScreenState extends State<ListScreen> {
                 ],
               ),
             ),
+            // Expanded ListView to display the items
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.all(8.0),

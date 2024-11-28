@@ -8,9 +8,10 @@ class BudgetScreen extends StatefulWidget {
 }
 
 class _BudgetScreenState extends State<BudgetScreen> {
-  double _budget = 50.0;
-  double _total = 0.0;
+  double _budget = 50.0; // Initial budget value
+  double _total = 0.0; // Total amount spent
 
+  // List of items with their names, prices, and icons
   final List<Map<String, dynamic>> _items = [
     {'name': 'Milk', 'price': 5.0, 'icon': Icons.breakfast_dining},
     {'name': 'Apples', 'price': 3.0, 'icon': Icons.apple},
@@ -19,18 +20,21 @@ class _BudgetScreenState extends State<BudgetScreen> {
     {'name': 'Tomato', 'price': 3.0, 'icon': Icons.food_bank},
   ];
 
+  // Function to add the price of an item to the total
   void _addToTotal(double price) {
     setState(() {
       _total += price;
     });
   }
 
+  // Function to reset the total amount spent
   void _resetTotal() {
     setState(() {
       _total = 0.0;
     });
   }
 
+  // Function to increase the budget by 10
   void _increaseBudget() {
     setState(() {
       _budget += 10.0;
@@ -176,8 +180,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                       ),
                       child: ListTile(
                         leading: CircleAvatar(
-                          backgroundColor:
-                              Theme.of(context).primaryColor,
+                          backgroundColor: Theme.of(context).primaryColor,
                           child: Icon(
                             _items[index]['icon'],
                             color: Colors.white,
@@ -200,8 +203,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           decoration: BoxDecoration(
                             color: _total + _items[index]['price'] > _budget
                                 ? Colors.grey
-                                : Theme.of(context)
-                                    .primaryColor,
+                                : Theme.of(context).primaryColor,
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: TextButton(

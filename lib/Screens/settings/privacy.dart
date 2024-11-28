@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// This widget represents the screen for managing privacy settings.
 class PrivacySettingsScreen extends StatefulWidget {
   const PrivacySettingsScreen({super.key});
 
@@ -7,9 +8,12 @@ class PrivacySettingsScreen extends StatefulWidget {
   _PrivacySettingsScreenState createState() => _PrivacySettingsScreenState();
 }
 
+// State class for PrivacySettingsScreen
 class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
-  bool _isBiometricEnabled = false; // Toggle for biometric authentication
+  // State variable for biometric authentication toggle
+  bool _isBiometricEnabled = false;
 
+  // Method to show confirmation dialog for account deletion
   void _confirmDeleteAccount(BuildContext context) {
     showDialog(
       context: context,
@@ -51,7 +55,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              child: Text(
+              child: const Text(
                 'Delete',
                 style: TextStyle(color: Colors.white),
               ),
@@ -62,6 +66,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
     );
   }
 
+  // Method to show a message when the account is deleted
   void _showAccountDeletedMessage(BuildContext context) {
     showDialog(
       context: context,
@@ -95,6 +100,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
     );
   }
 
+  // Method to show confirmation dialog for clearing cache
   void _clearCache(BuildContext context) {
     showDialog(
       context: context,
@@ -104,7 +110,8 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          title: const Text('Clear Cache', style: TextStyle(color: Colors.white)),
+          title:
+              const Text('Clear Cache', style: TextStyle(color: Colors.white)),
           content: const Text('Are you sure you want to clear the cache?',
               style: TextStyle(color: Colors.white)),
           actions: [
@@ -112,7 +119,8 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
               onPressed: () {
                 Navigator.pop(context); // Close dialog
               },
-              child: const Text('Cancel', style: TextStyle(color: Colors.white)),
+              child:
+                  const Text('Cancel', style: TextStyle(color: Colors.white)),
             ),
             ElevatedButton(
               onPressed: () {
@@ -129,7 +137,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              child: Text('Clear'),
+              child: const Text('Clear'),
             ),
           ],
         );
@@ -158,6 +166,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
         child: ListView(
           padding: const EdgeInsets.all(16.0),
           children: [
+            // Container for biometric authentication toggle
             Container(
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.05),
@@ -186,6 +195,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
                 ),
               ),
             ),
+            // Container for account deletion option
             Container(
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.05),
@@ -203,6 +213,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
                 },
               ),
             ),
+            // Container for clearing cache option
             Container(
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.05),
@@ -211,8 +222,8 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
               margin: const EdgeInsets.symmetric(vertical: 4),
               child: ListTile(
                 leading: const Icon(Icons.data_usage, color: Colors.white),
-                title:
-                    const Text('Clear Cache', style: TextStyle(color: Colors.white)),
+                title: const Text('Clear Cache',
+                    style: TextStyle(color: Colors.white)),
                 subtitle: const Text(
                   'Frees up 150MB of space.',
                   style: TextStyle(color: Colors.grey),

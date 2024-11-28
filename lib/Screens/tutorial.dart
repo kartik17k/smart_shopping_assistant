@@ -7,6 +7,7 @@ class TutorialScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Define text style for the title
     final TextStyle titleStyle = const TextStyle(
       color: Colors.white,
       fontSize: 28.0,
@@ -14,12 +15,14 @@ class TutorialScreen extends StatelessWidget {
       letterSpacing: 0.5,
     );
 
+    // Define text style for the description
     final TextStyle descriptionStyle = TextStyle(
       color: Colors.white.withOpacity(0.9),
       fontSize: 16.0,
       height: 1.5,
     );
 
+    // Define decoration for the image container
     final BoxDecoration imageContainerDecoration = BoxDecoration(
       color: Colors.white.withOpacity(0.1),
       borderRadius: BorderRadius.circular(20),
@@ -32,6 +35,7 @@ class TutorialScreen extends StatelessWidget {
       ],
     );
 
+    // Define gradient overlay for the images
     final LinearGradient overlayGradient = LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
@@ -165,6 +169,7 @@ class TutorialScreen extends StatelessWidget {
         ),
       ],
       onDonePress: () {
+        // Navigate to HomeScreen when done button is pressed
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => HomeScreen()),
@@ -185,6 +190,7 @@ class TutorialScreen extends StatelessWidget {
         overlayColor: WidgetStateProperty.all(Colors.white.withOpacity(0.1)),
       ),
       onSkipPress: () {
+        // Navigate to HomeScreen when skip button is pressed
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => HomeScreen()),

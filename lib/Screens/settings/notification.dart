@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// This widget represents the screen for managing notification preferences.
 class NotificationPreferencesScreen extends StatefulWidget {
   const NotificationPreferencesScreen({super.key});
 
@@ -8,16 +9,18 @@ class NotificationPreferencesScreen extends StatefulWidget {
       _NotificationPreferencesScreenState();
 }
 
+// State class for NotificationPreferencesScreen
 class _NotificationPreferencesScreenState
     extends State<NotificationPreferencesScreen> {
   // State variables for the toggles
-  bool _promotionalNotifications = true;
-  bool _reminderNotifications = false;
-  bool _appUpdatesNotifications = true;
+  bool _promotionalNotifications = true; // Toggle for promotional notifications
+  bool _reminderNotifications = false; // Toggle for reminder notifications
+  bool _appUpdatesNotifications = true; // Toggle for app updates notifications
 
   // Method to handle state changes and show a SnackBar
   void _onToggle(String type, bool value) {
     setState(() {
+      // Update the state based on the type of notification
       if (type == 'Promotional') {
         _promotionalNotifications = value;
       } else if (type == 'Reminder') {
@@ -27,6 +30,7 @@ class _NotificationPreferencesScreenState
       }
     });
 
+    // Show a SnackBar to inform the user about the change
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
@@ -42,7 +46,7 @@ class _NotificationPreferencesScreenState
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: const Text('Notification Preferences'),
+        title: const Text('Notification Preferences'), // Title of the screen
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -58,6 +62,7 @@ class _NotificationPreferencesScreenState
         child: ListView(
           padding: const EdgeInsets.all(16.0),
           children: [
+            // Container for promotional notifications toggle
             Container(
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.1),
@@ -76,6 +81,7 @@ class _NotificationPreferencesScreenState
                 onChanged: (value) => _onToggle('Promotional', value),
               ),
             ),
+            // Container for reminder notifications toggle
             Container(
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.1),
@@ -94,6 +100,7 @@ class _NotificationPreferencesScreenState
                 onChanged: (value) => _onToggle('Reminder', value),
               ),
             ),
+            // Container for app updates notifications toggle
             Container(
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.1),
@@ -101,8 +108,8 @@ class _NotificationPreferencesScreenState
               ),
               child: SwitchListTile(
                 activeColor: const Color(0x00e5e5e5),
-                title:
-                    const Text('App Updates', style: TextStyle(color: Colors.white)),
+                title: const Text('App Updates',
+                    style: TextStyle(color: Colors.white)),
                 subtitle: const Text(
                   'Stay updated with new features and releases.',
                   style: TextStyle(color: Colors.grey),

@@ -5,6 +5,7 @@ import 'package:smart_shopping_assistant/Screens/settings/help.dart';
 import 'package:smart_shopping_assistant/Screens/settings/notification.dart';
 import 'package:smart_shopping_assistant/Screens/settings/privacy.dart';
 
+// This class represents the settings screen of the application.
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -14,7 +15,7 @@ class SettingsScreen extends StatelessWidget {
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: const Text('Settings'),
+        title: const Text('Settings'), // Title of the app bar
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -30,6 +31,7 @@ class SettingsScreen extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.all(16.0),
           children: [
+            // Build a card for account settings
             _buildSettingsCard(
               context,
               icon: Icons.person,
@@ -37,6 +39,7 @@ class SettingsScreen extends StatelessWidget {
               color: Colors.blue,
               destination: AccountSettingsScreen(),
             ),
+            // Build a card for notification preferences
             _buildSettingsCard(
               context,
               icon: Icons.notifications,
@@ -44,6 +47,7 @@ class SettingsScreen extends StatelessWidget {
               color: Colors.orange,
               destination: NotificationPreferencesScreen(),
             ),
+            // Build a card for privacy and security settings
             _buildSettingsCard(
               context,
               icon: Icons.lock,
@@ -51,6 +55,7 @@ class SettingsScreen extends StatelessWidget {
               color: Colors.red,
               destination: PrivacySettingsScreen(),
             ),
+            // Build a card for help and support
             _buildSettingsCard(
               context,
               icon: Icons.help,
@@ -58,6 +63,7 @@ class SettingsScreen extends StatelessWidget {
               color: Colors.green,
               destination: HelpSupportScreen(),
             ),
+            // Build a card for about section
             _buildSettingsCard(
               context,
               icon: Icons.info,
@@ -71,6 +77,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
+  // Helper method to build a settings card
   Widget _buildSettingsCard(BuildContext context,
       {required IconData icon,
       required String title,
@@ -78,19 +85,21 @@ class SettingsScreen extends StatelessWidget {
       required Widget destination}) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(15),
+        color: Colors.white.withOpacity(0.1), // Card background color
+        borderRadius: BorderRadius.circular(15), // Rounded corners
       ),
-      margin: const EdgeInsets.only(bottom: 16.0),
+      margin: const EdgeInsets.only(bottom: 16.0), // Margin between cards
       child: ListTile(
-        leading: Icon(icon, size: 28, color: color),
+        leading: Icon(icon, size: 28, color: color), // Icon for the card
         title: Text(
           title,
           style: const TextStyle(
               color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),
         ),
-        trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
+        trailing: const Icon(Icons.arrow_forward_ios,
+            size: 16, color: Colors.grey), // Arrow icon
         onTap: () {
+          // Navigate to the destination screen when tapped
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => destination),

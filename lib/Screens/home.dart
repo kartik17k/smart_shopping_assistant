@@ -16,8 +16,8 @@ class SmartGroceryApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      debugShowCheckedModeBanner: false, // Disable debug banner
+      home: HomeScreen(), // Set HomeScreen as the home widget
     );
   }
 }
@@ -30,12 +30,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool _isFirstTime = true;
+  bool _isFirstTime = true; // Track if it's the user's first time
 
   @override
   void initState() {
     super.initState();
-    _checkIfFirstTime();
+    _checkIfFirstTime(); // Check if it's the user's first time
   }
 
   Future<void> _checkIfFirstTime() async {
@@ -46,11 +46,13 @@ class _HomeScreenState extends State<HomeScreen> {
       prefs.setBool('isFirstTime', false);
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => TutorialScreen()),
+        MaterialPageRoute(
+            builder: (context) =>
+                TutorialScreen()), // Navigate to TutorialScreen
       );
     } else {
       setState(() {
-        _isFirstTime = false;
+        _isFirstTime = false; // Update state if not first time
       });
     }
   }
@@ -58,14 +60,18 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     if (_isFirstTime) {
-      return const Center(child: CircularProgressIndicator());
+      return const Center(
+          child:
+              CircularProgressIndicator()); // Show loading indicator if first time
     }
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor:
+          Colors.transparent, // Set background color to transparent
       appBar: AppBar(
-        title: const Text('Smart Grocery Assistant'),
-        backgroundColor: Colors.transparent,
+        title: const Text('Smart Grocery Assistant'), // Set app bar title
+        backgroundColor:
+            Colors.transparent, // Set app bar background color to transparent
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -80,96 +86,123 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0), // Add padding around the child
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment:
+                  CrossAxisAlignment.start, // Align children to the start
               children: [
                 const Text(
                   'Welcome Back!',
                   style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: Colors.white), // Set text style
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 20), // Add space between elements
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment:
+                      MainAxisAlignment.spaceAround, // Distribute space evenly
                   children: [
                     GestureDetector(
                       onTap: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ListScreen()),
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                ListScreen()), // Navigate to ListScreen
                       ),
                       child: _buildQuickAction(
-                          icon: Icons.add_shopping_cart, label: 'New List'),
+                          icon: Icons.add_shopping_cart,
+                          label: 'New List'), // Build quick action button
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SetBudgetScreen()),
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                SetBudgetScreen()), // Navigate to SetBudgetScreen
                       ),
                       child: _buildQuickAction(
-                          icon: Icons.attach_money, label: 'Set Budget'),
+                          icon: Icons.attach_money,
+                          label: 'Set Budget'), // Build quick action button
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SavedListsScreen()),
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                SavedListsScreen()), // Navigate to SavedListsScreen
                       ),
                       child: _buildQuickAction(
-                          icon: Icons.view_list, label: 'Saved Lists'),
+                          icon: Icons.view_list,
+                          label: 'Saved Lists'), // Build quick action button
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
-                _buildSectionTitle('Shopping Insights'),
+                const SizedBox(height: 20), // Add space between elements
+                _buildSectionTitle('Shopping Insights'), // Build section title
                 Card(
-                  color: Colors.white.withOpacity(0.1),
-                  elevation: 4,
+                  color: Colors.white
+                      .withOpacity(0.1), // Set card color with opacity
+                  elevation: 4, // Set card elevation
                   child: const ListTile(
-                    leading: Icon(Icons.bar_chart, color: Colors.purple),
+                    leading: Icon(Icons.bar_chart,
+                        color: Colors.purple), // Set leading icon
                     title: Text('Last Trip',
-                        style: TextStyle(color: Colors.white)),
+                        style: TextStyle(
+                            color: Colors.white)), // Set title text style
                     subtitle: Text('Spent \$45 out of \$50 budget',
-                        style: TextStyle(color: Colors.white70)),
+                        style: TextStyle(
+                            color: Colors.white70)), // Set subtitle text style
                   ),
                 ),
                 Card(
-                  color: Colors.white.withOpacity(0.1),
-                  elevation: 4,
+                  color: Colors.white
+                      .withOpacity(0.1), // Set card color with opacity
+                  elevation: 4, // Set card elevation
                   child: const ListTile(
-                    leading: Icon(Icons.category, color: Colors.blue),
+                    leading: Icon(Icons.category,
+                        color: Colors.blue), // Set leading icon
                     title: Text('Top Categories',
-                        style: TextStyle(color: Colors.white)),
+                        style: TextStyle(
+                            color: Colors.white)), // Set title text style
                     subtitle: Text('Dairy, Snacks, Vegetables',
-                        style: TextStyle(color: Colors.white70)),
+                        style: TextStyle(
+                            color: Colors.white70)), // Set subtitle text style
                   ),
                 ),
-                const SizedBox(height: 20),
-                _buildSectionTitle('Tip of the Day'),
+                const SizedBox(height: 20), // Add space between elements
+                _buildSectionTitle('Tip of the Day'), // Build section title
                 Card(
-                  color: Colors.white.withOpacity(0.1),
-                  elevation: 4,
+                  color: Colors.white
+                      .withOpacity(0.1), // Set card color with opacity
+                  elevation: 4, // Set card elevation
                   child: const ListTile(
-                    leading: Icon(Icons.lightbulb, color: Colors.orange),
+                    leading: Icon(Icons.lightbulb,
+                        color: Colors.orange), // Set leading icon
                     title: Text('Save Money',
-                        style: TextStyle(color: Colors.white)),
+                        style: TextStyle(
+                            color: Colors.white)), // Set title text style
                     subtitle: Text(
                         'Stick to your list and avoid shopping when hungry!',
-                        style: TextStyle(color: Colors.white70)),
+                        style: TextStyle(
+                            color: Colors.white70)), // Set subtitle text style
                   ),
                 ),
-                const SizedBox(height: 20),
-                _buildSectionTitle('Recent Activity'),
+                const SizedBox(height: 20), // Add space between elements
+                _buildSectionTitle('Recent Activity'), // Build section title
                 Card(
-                  color: Colors.white.withOpacity(0.1),
-                  elevation: 4,
+                  color: Colors.white
+                      .withOpacity(0.1), // Set card color with opacity
+                  elevation: 4, // Set card elevation
                   child: const ListTile(
-                    leading: Icon(Icons.history, color: Colors.grey),
+                    leading: Icon(Icons.history,
+                        color: Colors.grey), // Set leading icon
                     title: Text('Last Shopping Trip',
-                        style: TextStyle(color: Colors.white)),
+                        style: TextStyle(
+                            color: Colors.white)), // Set title text style
                     subtitle: Text('Oct 10: Purchased 12 items under budget.',
-                        style: TextStyle(color: Colors.white70)),
+                        style: TextStyle(
+                            color: Colors.white70)), // Set subtitle text style
                   ),
                 ),
               ],
@@ -184,23 +217,29 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       children: [
         CircleAvatar(
-          radius: 30,
-          backgroundColor: const Color(0xFF134C85),
-          child: Icon(icon, color: Colors.white, size: 30),
+          radius: 30, // Set circle avatar radius
+          backgroundColor: const Color(0xFF134C85), // Set background color
+          child: Icon(icon,
+              color: Colors.white, size: 30), // Set icon color and size
         ),
-        const SizedBox(height: 8),
-        Text(label, style: const TextStyle(fontSize: 14, color: Colors.white)),
+        const SizedBox(height: 8), // Add space between elements
+        Text(label,
+            style: const TextStyle(
+                fontSize: 14, color: Colors.white)), // Set text style
       ],
     );
   }
 
   Widget _buildSectionTitle(String title) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding:
+          const EdgeInsets.symmetric(vertical: 8.0), // Add vertical padding
       child: Text(
         title,
         style: const TextStyle(
-            fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.white), // Set text style
       ),
     );
   }

@@ -27,6 +27,7 @@ class AccountSettingsScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
+              // User Profile Section
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.1),
@@ -58,6 +59,7 @@ class AccountSettingsScreen extends StatelessWidget {
                   },
                 ),
               ),
+              // Change Password Section
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.1),
@@ -74,12 +76,14 @@ class AccountSettingsScreen extends StatelessWidget {
                         color: Colors.white,
                         fontSize: 16,
                       )),
-                  trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey),
+                  trailing:
+                      const Icon(Icons.arrow_forward_ios, color: Colors.grey),
                   onTap: () {
                     _showChangePasswordDialog(context);
                   },
                 ),
               ),
+              // Payment Methods Section
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.1),
@@ -96,12 +100,14 @@ class AccountSettingsScreen extends StatelessWidget {
                         color: Colors.white,
                         fontSize: 16,
                       )),
-                  trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey),
+                  trailing:
+                      const Icon(Icons.arrow_forward_ios, color: Colors.grey),
                   onTap: () {
                     _showPaymentMethodsDialog(context);
                   },
                 ),
               ),
+              // Log Out Section
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.1),
@@ -118,14 +124,17 @@ class AccountSettingsScreen extends StatelessWidget {
                         color: Colors.white,
                         fontSize: 16,
                       )),
-                  trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey),
+                  trailing:
+                      const Icon(Icons.arrow_forward_ios, color: Colors.grey),
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));
-
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        ));
                   },
                 ),
               ),
-
             ],
           ),
         ),
@@ -133,6 +142,7 @@ class AccountSettingsScreen extends StatelessWidget {
     );
   }
 
+  // Function to show Change Password Dialog
   void _showChangePasswordDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -198,7 +208,8 @@ class AccountSettingsScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              child: const Text('Update', style: TextStyle(color: Colors.white)),
+              child:
+                  const Text('Update', style: TextStyle(color: Colors.white)),
             ),
           ],
         );
@@ -206,6 +217,7 @@ class AccountSettingsScreen extends StatelessWidget {
     );
   }
 
+  // Function to show Payment Methods Dialog
   void _showPaymentMethodsDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -233,7 +245,8 @@ class AccountSettingsScreen extends StatelessWidget {
                   leading: const Icon(Icons.credit_card, color: Colors.orange),
                   title: const Text('Add New Card',
                       style: TextStyle(color: Colors.white)),
-                  trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey),
+                  trailing:
+                      const Icon(Icons.arrow_forward_ios, color: Colors.grey),
                   onTap: () {
                     // Navigate to Add New Card screen or functionality
                   },
@@ -249,7 +262,8 @@ class AccountSettingsScreen extends StatelessWidget {
                   leading: const Icon(Icons.payment, color: Colors.green),
                   title: const Text('UPI Payment',
                       style: TextStyle(color: Colors.white)),
-                  trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey),
+                  trailing:
+                      const Icon(Icons.arrow_forward_ios, color: Colors.grey),
                   onTap: () {
                     // Navigate to Add New Card screen or functionality
                   },

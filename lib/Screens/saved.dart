@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SavedListsScreen extends StatelessWidget {
+  // List of saved lists with their titles and items
   final List<Map<String, dynamic>> savedLists = [
     {
       'title': 'Weekly Groceries',
@@ -82,14 +83,17 @@ class SavedListsScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final list = savedLists[index];
             return Card(
-              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              margin:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0),
               ),
-              color: Colors.white.withOpacity(0.1), // Transparent card background
+              color:
+                  Colors.white.withOpacity(0.1), // Transparent card background
               elevation: 4,
               child: ListTile(
-                contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 12.0, horizontal: 16.0),
                 title: Text(
                   list['title'],
                   style: const TextStyle(
@@ -106,7 +110,8 @@ class SavedListsScreen extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
+                trailing:
+                    const Icon(Icons.arrow_forward_ios, color: Colors.white),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -152,14 +157,17 @@ class ListDetailsScreen extends StatelessWidget {
           itemCount: list['items'].length,
           itemBuilder: (context, index) {
             return Card(
-              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              margin:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0),
               ),
-              color: Colors.white.withOpacity(0.1), // Transparent card background
+              color:
+                  Colors.white.withOpacity(0.1), // Transparent card background
               elevation: 4,
               child: ListTile(
-                contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 12.0, horizontal: 16.0),
                 leading: CircleAvatar(
                   backgroundColor: Colors.white.withOpacity(0.3),
                   child: Text(
