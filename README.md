@@ -75,7 +75,7 @@ Contributions are welcome! Please follow these steps:
 
 Here’s a screenshot of the app:
 
-![home Screenshot](assets/screenshots/home.png)
+![home Screenshot]<img src="assets/screenshots/home.png" alt="Screenshot Description" width="600">
 
 
 📧 Contact
