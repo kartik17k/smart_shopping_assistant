@@ -75,7 +75,7 @@ Contributions are welcome! Please follow these steps:
 
 Here’s a screenshot of the app:
 
-![home Screenshot](https://drive.google.com/file/d/1cLIBtpTNQ7rDY1GYsOZZ1UrWe6DindVU/view?usp=drive_link)
+![home Screenshot](https://drive.google.com/file/d/1Ss4ip7cLhfjbgFsSXMIfBlF6TOZH6fK4/view?usp=drive_link)
 
 
 📧 Contact
