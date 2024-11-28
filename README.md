@@ -54,10 +54,6 @@ The app features:
 - Gradient backgrounds for an aesthetically pleasing experience.
 - Responsive layouts for various screen sizes.
 
-🗒️ To-Do List
-- Add in-app notifications for special offers.
-- Add support for user-defined categories.
-
 💡 Contributing
 Contributions are welcome! Please follow these steps:
 1. Fork the repository.
@@ -74,9 +70,6 @@ Contributions are welcome! Please follow these steps:
    git push origin feature/new-feature
    ```
 5. Open a pull request.
-
-📄 License
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 📧 Contact
 For questions or suggestions, feel free to reach out at:

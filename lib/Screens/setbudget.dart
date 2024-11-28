@@ -14,6 +14,10 @@ class _SetBudgetScreenState extends State<SetBudgetScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Set Budget'),
+        backgroundColor: Theme.of(context).primaryColor,
+      ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(

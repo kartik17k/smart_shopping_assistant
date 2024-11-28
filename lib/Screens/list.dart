@@ -8,6 +8,7 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
+
   final List<Map<String, dynamic>> _items = [
     {'name': 'Milk', 'category': 'Dairy'},
     {'name': 'Apples', 'category': 'Fruits'},
@@ -16,6 +17,8 @@ class _ListScreenState extends State<ListScreen> {
     {'name': 'Tomato', 'category': 'Vegetable'},
   ];
 
+
+  final TextEditingController _name = TextEditingController();
   final TextEditingController _controller = TextEditingController();
   final List<String> _categories = [
     'Dairy',
@@ -113,7 +116,7 @@ class _ListScreenState extends State<ListScreen> {
               child: Column(
                 children: [
                   TextField(
-                    controller: _controller,
+                    controller: _name,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       labelText: 'Name of the list',
