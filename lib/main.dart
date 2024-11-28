@@ -1,8 +1,15 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_shopping_assistant/pages/login.dart';
 
 void main() {
-  runApp(SmartGroceryApp());
+  // for ios Preview
+  runApp(
+    DevicePreview(builder: (context) => SmartGroceryApp(),)
+  );
+
+  // for normal
+  // runApp(SmartGroceryApp());
 }
 
 class SmartGroceryApp extends StatelessWidget {

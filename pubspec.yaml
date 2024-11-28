@@ -14,11 +14,8 @@ dependencies:
   provider: ^6.1.2
   flutter_map: ^4.0.0
   shared_preferences: ^2.0.15
-  hive: ^2.2.3
-  hive_flutter: ^1.1.0
-  speech_to_text: ^7.0.0
-  fl_chart: ^0.69.2
   intro_slider: ^3.0.0
+  device_preview: ^1.2.0
 
 
   # The following adds the Cupertino Icons font to your application.
