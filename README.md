@@ -71,6 +71,13 @@ Contributions are welcome! Please follow these steps:
    ```
 5. Open a pull request.
 
+## Screenshots
+
+Here’s a screenshot of the app:
+
+![home Screenshot](assets/screenshots/home.png)
+
+
 📧 Contact
 For questions or suggestions, feel free to reach out at:
 - Email: kartikkattishettar@gmail.com
