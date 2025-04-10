@@ -9,7 +9,7 @@ void main() {
   ));
 
   // Uncomment the line below to run the app normally without DevicePreview
-  // runApp(SmartGroceryApp());
+  //  runApp(SmartGroceryApp());
 }
 
 class SmartGroceryApp extends StatelessWidget {

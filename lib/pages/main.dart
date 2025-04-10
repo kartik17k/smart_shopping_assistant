@@ -14,8 +14,7 @@ class MainPage extends StatefulWidget {
 
 // _MainPageState is the state class for MainPage
 class _MainPageState extends State<MainPage> {
-  int _currentIndex =
-      0; // Tracks the current index of the bottom navigation bar
+  int _currentIndex = 0; // Tracks the current index of the bottom navigation bar
   final PageController _pageController =
       PageController(); // Controller for PageView
 

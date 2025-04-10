@@ -24,10 +24,8 @@ class LoginPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0), // Add padding around the child
           child: Column(
-            mainAxisAlignment:
-                MainAxisAlignment.center, // Center the column vertically
-            crossAxisAlignment: CrossAxisAlignment
-                .stretch, // Stretch children to fill the column width
+            mainAxisAlignment:MainAxisAlignment.center, // Center the column vertically
+            crossAxisAlignment: CrossAxisAlignment.stretch, // Stretch children to fill the column width
             children: [
               const Text(
                 'Login',
